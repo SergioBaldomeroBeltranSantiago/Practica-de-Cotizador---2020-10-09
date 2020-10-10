@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calculadora;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,10 @@ namespace Practica_de_Cotizador___2020_10_09
             USDmxn.Checked = false;
         }
 
-        private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenuCalculadora_Click(object sender, EventArgs e)
         {
-
+            CalculadoraPrincipal1 x = new CalculadoraPrincipal1();
+            x.Show();
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -39,11 +41,32 @@ namespace Practica_de_Cotizador___2020_10_09
             Output.Text = "";
         }
 
+        private double StringInt(string entrada) {
+            int salida;
+            bool convertidor = Int32.TryParse(entrada, out salida);
+            if (convertidor)
+            {
+                return (double)salida;
+            }
+            else {
+                return 0;
+            }
+        }
+
         private void Process_Click(object sender, EventArgs e)
         {
             if ((!Input.Text.Equals("")) && (MXNusd.Checked || USDmxn.Checked))
             {
-
+                double num = StringInt(Input.Text);
+                if (MXNusd.Checked)
+                {
+                    double resultado = num / 21.13;
+                    Output.Text = (resultado + " USD.");
+                }
+                else {
+                    double resultado = num * 21.13;
+                    Output.Text = (resultado + " MXN.");
+                }
             }
             else {
                 if (Input.Text.Equals(""))

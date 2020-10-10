@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cotizador));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuCalculadora = new System.Windows.Forms.ToolStripMenuItem();
             this.MXNORUSD = new System.Windows.Forms.GroupBox();
-            this.Input = new System.Windows.Forms.TextBox();
-            this.MXNusd = new System.Windows.Forms.RadioButton();
             this.USDmxn = new System.Windows.Forms.RadioButton();
+            this.MXNusd = new System.Windows.Forms.RadioButton();
+            this.Input = new System.Windows.Forms.TextBox();
             this.Aqua = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Button();
             this.Clean = new System.Windows.Forms.Button();
@@ -51,19 +51,19 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.calculadoraToolStripMenuItem});
+            this.MenuCalculadora});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(640, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // calculadoraToolStripMenuItem
+            // MenuCalculadora
             // 
-            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.calculadoraToolStripMenuItem.Text = "Calculadora";
-            this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
+            this.MenuCalculadora.Name = "MenuCalculadora";
+            this.MenuCalculadora.Size = new System.Drawing.Size(82, 20);
+            this.MenuCalculadora.Text = "Calculadora";
+            this.MenuCalculadora.Click += new System.EventHandler(this.MenuCalculadora_Click);
             // 
             // MXNORUSD
             // 
@@ -77,13 +77,18 @@
             this.MXNORUSD.TabStop = false;
             this.MXNORUSD.Text = "Convertir: ";
             // 
-            // Input
+            // USDmxn
             // 
-            this.Input.Location = new System.Drawing.Point(157, 32);
-            this.Input.Multiline = true;
-            this.Input.Name = "Input";
-            this.Input.Size = new System.Drawing.Size(172, 32);
-            this.Input.TabIndex = 5;
+            this.USDmxn.AutoSize = true;
+            this.USDmxn.BackColor = System.Drawing.Color.DarkGray;
+            this.USDmxn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.USDmxn.Location = new System.Drawing.Point(7, 51);
+            this.USDmxn.Name = "USDmxn";
+            this.USDmxn.Size = new System.Drawing.Size(295, 24);
+            this.USDmxn.TabIndex = 1;
+            this.USDmxn.TabStop = true;
+            this.USDmxn.Text = "Dolares estadounidenes a pesos mexicanos";
+            this.USDmxn.UseVisualStyleBackColor = false;
             // 
             // MXNusd
             // 
@@ -98,18 +103,13 @@
             this.MXNusd.Text = "Pesos mexicanos a dolares estadounidenses";
             this.MXNusd.UseVisualStyleBackColor = false;
             // 
-            // USDmxn
+            // Input
             // 
-            this.USDmxn.AutoSize = true;
-            this.USDmxn.BackColor = System.Drawing.Color.DarkGray;
-            this.USDmxn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.USDmxn.Location = new System.Drawing.Point(7, 51);
-            this.USDmxn.Name = "USDmxn";
-            this.USDmxn.Size = new System.Drawing.Size(295, 24);
-            this.USDmxn.TabIndex = 1;
-            this.USDmxn.TabStop = true;
-            this.USDmxn.Text = "Dolares estadounidenes a pesos mexicanos";
-            this.USDmxn.UseVisualStyleBackColor = false;
+            this.Input.Location = new System.Drawing.Point(157, 32);
+            this.Input.Multiline = true;
+            this.Input.Name = "Input";
+            this.Input.Size = new System.Drawing.Size(172, 32);
+            this.Input.TabIndex = 5;
             // 
             // Aqua
             // 
@@ -215,7 +215,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem calculadoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuCalculadora;
         private System.Windows.Forms.GroupBox MXNORUSD;
         private System.Windows.Forms.RadioButton USDmxn;
         private System.Windows.Forms.RadioButton MXNusd;
