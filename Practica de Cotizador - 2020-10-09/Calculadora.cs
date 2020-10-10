@@ -252,7 +252,7 @@ namespace Calculadora
                             }
                             else {
                                 arreglo[(arreglo.IndexOf('/') - cuno)] = 0;
-                                MessageBox.Show("Division invalida, sustituyendo valor con 0.");
+                                MessageBox.Show("Division invalida.");
                                 zerodiv = true;
                             }
                             for (int k = 1; k < cuno; k++)
