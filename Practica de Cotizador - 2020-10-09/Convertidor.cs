@@ -41,30 +41,32 @@ namespace Practica_de_Cotizador___2020_10_09
             Output.Text = "";
         }
 
-        private double StringInt(string entrada) {
-            int salida;
-            bool convertidor = Int32.TryParse(entrada, out salida);
+        private float StringInt(string entrada) {
+            float salida;
+            double nx;
+            bool convertidor = Double.TryParse(entrada, out nx);
             if (convertidor)
             {
-                return (double)salida;
+                salida = (float)nx;
             }
             else {
-                return 0;
+                salida = 0;
             }
+            return salida;
         }
 
         private void Process_Click(object sender, EventArgs e)
         {
             if ((!Input.Text.Equals("")) && (MXNusd.Checked || USDmxn.Checked))
             {
-                double num = StringInt(Input.Text);
+                float num = StringInt(Input.Text);
                 if (MXNusd.Checked)
                 {
-                    double resultado = num / 21.13;
+                    float resultado = (float)(num / 21.13);
                     Output.Text = (resultado + " USD.");
                 }
                 else {
-                    double resultado = num * 21.13;
+                    float resultado = (float)(num * 21.13);
                     Output.Text = (resultado + " MXN.");
                 }
             }
